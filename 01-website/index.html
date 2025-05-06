@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Family Doctor Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Dr. Smith's Practice</div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="bg">BG</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" data-translate="nav.home">Home</a></li>
+                    <li><a href="#services" data-translate="nav.services">Services</a></li>
+                    <li><a href="#pricing" data-translate="nav.pricing">Pricing</a></li>
+                    <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 data-translate="hero.title">Welcome to Our Family Practice</h1>
+            <p data-translate="hero.subtitle">Providing quality healthcare for your entire family</p>
+            <a href="#contact" class="cta-button" data-translate="hero.cta">Schedule an Appointment</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 data-translate="services.title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3 data-translate="services.generalCheckup.title">General Check-ups</h3>
+                    <p data-translate="services.generalCheckup.description">Regular health examinations and preventive care for all ages</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3 data-translate="services.diagnostic.title">Diagnostic Services</h3>
+                    <p data-translate="services.diagnostic.description">Comprehensive diagnostic testing and analysis</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pills"></i>
+                    <h3 data-translate="services.chronic.title">Chronic Disease Management</h3>
+                    <p data-translate="services.chronic.description">Specialized care for ongoing health conditions</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-vaccine"></i>
+                    <h3 data-translate="services.vaccinations.title">Vaccinations</h3>
+                    <p data-translate="services.vaccinations.description">Immunizations for children and adults</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="announcements" class="announcements">
+        <div class="container">
+            <h2 data-translate="announcements.title">Announcements</h2>
+            <div class="announcements-grid">
+                <div class="announcement-card">
+                    <div class="announcement-date">
+                        <span class="day">15</span>
+                        <span class="month" data-translate="announcements.may">May</span>
+                    </div>
+                    <div class="announcement-content">
+                        <h3 data-translate="announcements.vaccination.title">Flu Vaccination Campaign</h3>
+                        <p data-translate="announcements.vaccination.description">Annual flu vaccination campaign starts. Book your appointment now.</p>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <div class="announcement-date">
+                        <span class="day">20</span>
+                        <span class="month" data-translate="announcements.may">May</span>
+                    </div>
+                    <div class="announcement-content">
+                        <h3 data-translate="announcements.holiday.title">Holiday Schedule</h3>
+                        <p data-translate="announcements.holiday.description">Special working hours during the holiday season.</p>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <div class="announcement-date">
+                        <span class="day">01</span>
+                        <span class="month" data-translate="announcements.june">June</span>
+                    </div>
+                    <div class="announcement-content">
+                        <h3 data-translate="announcements.new.title">New Services Available</h3>
+                        <p data-translate="announcements.new.description">We are happy to announce new diagnostic services in our practice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 data-translate="pricing.title">Our Pricing</h2>
+            <div class="pricing-table">
+                <div class="pricing-card">
+                    <h3 data-translate="pricing.initial.title">Initial Consultation</h3>
+                    <p class="price" data-translate="pricing.initial.price">$150</p>
+                    <ul>
+                        <li data-translate="pricing.initial.features.0">Comprehensive health assessment</li>
+                        <li data-translate="pricing.initial.features.1">Medical history review</li>
+                        <li data-translate="pricing.initial.features.2">Basic physical examination</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-translate="pricing.regular.title">Regular Check-up</h3>
+                    <p class="price" data-translate="pricing.regular.price">$100</p>
+                    <ul>
+                        <li data-translate="pricing.regular.features.0">Routine physical examination</li>
+                        <li data-translate="pricing.regular.features.1">Vital signs check</li>
+                        <li data-translate="pricing.regular.features.2">Health counseling</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-translate="pricing.vaccination.title">Vaccination</h3>
+                    <p class="price" data-translate="pricing.vaccination.price">$50</p>
+                    <ul>
+                        <li data-translate="pricing.vaccination.features.0">Standard vaccinations</li>
+                        <li data-translate="pricing.vaccination.features.1">Flu shots</li>
+                        <li data-translate="pricing.vaccination.features.2">Travel vaccines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-translate="contact.title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-translate="contact.getInTouch">Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Street, Health City, HC 12345</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@familydoctor.com</p>
+                    <div class="working-hours">
+                        <h4 data-translate="contact.workingHours">Working Hours</h4>
+                        <p data-translate="contact.hours.weekdays">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                        <p data-translate="contact.hours.saturday">Saturday: 9:00 AM - 1:00 PM</p>
+                        <p data-translate="contact.hours.sunday">Sunday: Closed</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" data-translate="contact.form.name" required>
+                    <input type="email" placeholder="Your Email" data-translate="contact.form.email" required>
+                    <input type="tel" placeholder="Your Phone" data-translate="contact.form.phone">
+                    <textarea placeholder="Your Message" data-translate="contact.form.message" required></textarea>
+                    <button type="submit" class="submit-button" data-translate="contact.form.submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p data-translate="footer">&copy; 2024 Family Doctor Practice. All rights reserved.</p>
+                <a href="privacy-policy.html" data-translate="privacy.title">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-modal" class="cookie-modal">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3 data-translate="cookie.title">Cookie Settings</h3>
+            </div>
+            <div class="cookie-modal-body">
+                <p data-translate="cookie.message">We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.</p>
+                <div class="cookie-modal-buttons">
+                    <button class="cookie-btn accept" data-translate="cookie.accept">Accept All</button>
+                    <button class="cookie-btn reject" data-translate="cookie.reject">Reject All</button>
+                    <a href="privacy-policy.html" class="cookie-link" data-translate="cookie.learnMore">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

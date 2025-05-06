@@ -1,0 +1,17 @@
+<div class="welcome-screen">
+  <h1>Welcome to Rock, Paper, Scissors!</h1>
+  <div class="username-form">
+    <input
+      v-model="username"
+      type="text"
+      placeholder="Enter your username"
+      @keyup.enter="startPlaying"
+    />
+    <button @click="startPlaying" :disabled="!username">
+      {{ username ? 'Change Username' : 'Start Playing' }}
+    </button>
+  </div>
+  <div v-if="isAuthenticated" class="actions">
+    <button @click="$router.push('/lobby')">Go to Lobby</button>
+  </div>
+</div> 

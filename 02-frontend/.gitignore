@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+yarn-error.log
+
+# Environment files
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output (if any at root)
+dist/
+build/
+
+# Docker
+*.local
+.docker/
+
+# Ignore coverage
+coverage/
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore frontend and backend build output (redundant, but safe)
+frontend/dist/
+backend/dist/

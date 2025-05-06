@@ -1,0 +1,71 @@
+<div class="game">
+  <h1>Rock Paper Scissors</h1>
+  
+  <div v-if="!showResult" class="choices">
+    <button @click="makeChoice('rock')" class="choice-button">
+      ✊ Rock
+    </button>
+    <button @click="makeChoice('paper')" class="choice-button">
+      ✋ Paper
+    </button>
+    <button @click="makeChoice('scissors')" class="choice-button">
+      ✌️ Scissors
+    </button>
+  </div>
+
+  <div v-if="showResult && myChoice && opponentChoice" class="result">
+    <div class="choices-display">
+      <div class="choice">
+        <h3>Your Choice</h3>
+        <div class="choice-icon">
+          {{ myChoice === 'rock' ? '✊' : myChoice === 'paper' ? '✋' : '✌️' }}
+        </div>
+      </div>
+      <div class="choice">
+        <h3>Opponent's Choice</h3>
+        <div class="choice-icon">
+          {{ opponentChoice === 'rock' ? '✊' : opponentChoice === 'paper' ? '✋' : '✌️' }}
+        </div>
+      </div>
+    </div>
+    <h2 class="result-message">{{ resultMessage }}</h2>
+  </div>
+
+  <div v-if="showResult && (!myChoice || !opponentChoice)" class="result">
+    <div class="choices-display">
+      <div class="choice">
+        <h3>Your Choice</h3>
+        <div class="choice-icon">
+          {{ myChoice === 'rock' ? '✊' : myChoice === 'paper' ? '✋' : myChoice === 'scissors' ? '✌️' : 'Waiting...' }}
+        </div>
+      </div>
+      <div class="choice">
+        <h3>Opponent's Choice</h3>
+        <div class="choice-icon">
+          Waiting for opponent...
+        </div>
+      </div>
+    </div>
+    <h2 class="result-message">Waiting for both players to choose...</h2>
+  </div>
+
+  <div v-if="showPlayAgain" class="play-again">
+    <button
+      v-if="!wantsAgain"
+      @click="handlePlayAgain"
+      class="play-again-button"
+    >
+      Play Again
+    </button>
+    <p v-else-if="!opponentWantsToPlayAgain">
+      Waiting for opponent to agree...
+    </p>
+    <p v-else>
+      Opponent wants to play again!
+    </p>
+  </div>
+
+  <button @click="handleLeaveGame" class="leave-button">
+    Leave Game
+  </button>
+</div> 
