@@ -1,0 +1,991 @@
+{
+    "scenes": {
+        "start": {
+            "title": "The Last Transmission",
+            "description": "You are Captain Sarah Chen, commander of the merchant vessel 'Stellar Horizon'. The soft hum of your ship's engines fills the bridge as you review the latest trade route data. Your cargo hold is full of valuable medical supplies bound for Earth - a shipment that could save thousands of lives in the ongoing pandemic.\n\nYour crew consists of:\n- Commander Rodriguez, your first officer and tactical specialist\n- Lieutenant James, communications officer and former Federation intelligence operative\n- Chief Engineer Martinez, a brilliant but eccentric engineer who keeps your ship running\n- Dr. Patel, your medical officer and expert in xenobiology\n- ALEX, your ship's advanced AI system\n- Security Team Alpha, led by Sergeant O'Connor, a veteran of the Federation Marine Corps\n\nSuddenly, your communications officer, Lieutenant James, calls out, 'Captain, we're receiving a distress signal!' The message crackles through the speakers, fragmented and desperate: '...Titan-7... under attack... pirates... children... help...' before cutting off into static.\n\nYour first officer, Commander Rodriguez, looks up from the tactical display. 'The signal's weak, but it's definitely from the mining colony. They've been having trouble with the Black Nebula Pirates for months.'\n\nYour ship's AI, ALEX, chimes in: 'Captain, I've analyzed the transmission. The colony's reactor is showing signs of instability. If we don't act soon, there could be a catastrophic failure.'",
+            "choices": [
+                {
+                    "text": "Set course for Titan-7 immediately. The colony needs help.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "chose_help_colony"}
+                    ]
+                },
+                {
+                    "text": "Continue to Earth. The medical supplies are too valuable to risk.",
+                    "next_scene": "earth_route",
+                    "actions": [
+                        {"type": "set_flag", "flag": "chose_earth_mission"}
+                    ]
+                },
+                {
+                    "text": "Send a message to the Interstellar Trade Federation and wait for their response.",
+                    "next_scene": "federation_contact",
+                    "actions": [
+                        {"type": "set_flag", "flag": "chose_federation"}
+                    ]
+                },
+                {
+                    "text": "Order a full scan of the area first. We need more information.",
+                    "next_scene": "initial_scan",
+                    "actions": [
+                        {"type": "set_flag", "flag": "chose_cautious"}
+                    ]
+                }
+            ]
+        },
+        "initial_scan": {
+            "title": "Colony Overview",
+            "description": "ALEX performs an initial scan of Titan-7. 'The colony's defense systems are offline. I'm detecting multiple ships in orbit, including what appears to be a modified Federation cruiser. Life signs are concentrated in the reactor complex.'\n\nCommander Rodriguez studies the tactical display: 'We could get more detailed information, but it would take time. The reactor's temperature is already rising.'",
+            "choices": [
+                {
+                    "text": "Launch a probe for detailed scans.",
+                    "next_scene": "probe_investigation"
+                },
+                {
+                    "text": "Perform a comprehensive scan of the entire colony.",
+                    "next_scene": "detailed_scan"
+                },
+                {
+                    "text": "Attempt to contact the colony.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "decrypt_communications": {
+            "title": "Breaking the Code",
+            "description": "ALEX begins decrypting the distress signal. 'The message is heavily encrypted, using multiple layers of quantum protocols. I'm detecting fragments about hostages and some kind of mineral extraction.'",
+            "choices": [
+                {
+                    "text": "Continue decryption.",
+                    "next_scene": "decrypt_communications_2"
+                },
+                {
+                    "text": "Investigate the source directly.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "decrypt_communications_2": {
+            "title": "Message Decryption",
+            "description": "The second layer of encryption falls away. ALEX reports: 'The message contains detailed plans for the reactor modification. They're using specialized equipment to create conditions for quantum crystal formation. The children are being used to ensure colony compliance.'",
+            "choices": [
+                {
+                    "text": "Let ALEX analyze the technical details.",
+                    "next_scene": "alex_decryption"
+                },
+                {
+                    "text": "We have enough information. Proceed to Titan-7.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "has_comm_data"}
+                    ]
+                }
+            ]
+        },
+        "probe_investigation": {
+            "title": "Detailed Analysis",
+            "description": "The probe, a sleek Federation Mark VII reconnaissance drone, glides silently through the void. Its advanced sensors sweep across Titan-7's surface, revealing the scars of recent conflict. The colony's once-pristine domes now show signs of battle damage, with several sections venting atmosphere into space.\n\nAs the probe approaches the reactor complex, its thermal imaging reveals unusual heat patterns. The main reactor's containment field flickers erratically, casting an eerie blue glow across the surrounding structures. ALEX processes the incoming data streams, correlating information from multiple sensor arrays.\n\n'The reactor's output is dangerously high,' ALEX reports. 'I'm detecting unusual energy signatures consistent with quantum crystal formation. The pirates must be attempting to create them artificially. The radiation levels are increasing at an alarming rate, and the containment field is weakening.'\n\nCommander Rodriguez points to a cluster of life signs near the reactor control room. 'Those must be the hostages. The pirates are keeping them close to prevent us from taking direct action.'",
+            "choices": [
+                {
+                    "text": "Return the probe and plan our approach.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "has_probe_data"}
+                    ]
+                },
+                {
+                    "text": "Have the probe scan for security vulnerabilities.",
+                    "next_scene": "colony_scan"
+                }
+            ]
+        },
+        "disable_command_ship": {
+            "title": "Sabotage Mission",
+            "description": "ALEX calculates a risky plan: 'If we can get close enough, I can use the probe to hack into their systems. However, this will require precise timing and multiple steps.'\n\nThe plan involves:\n1. Using the probe to create a diversion\n2. Hacking their communication systems\n3. Overloading their weapons array\n4. Escaping before they detect the intrusion",
+            "choices": [
+                {
+                    "text": "Begin the hacking sequence.",
+                    "next_scene": "hacking_sequence"
+                },
+                {
+                    "text": "This is too risky. Let's proceed to Titan-7 directly.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "has_scan_data"},
+                        {"type": "set_flag", "flag": "knows_second_ship"}
+                    ]
+                }
+            ]
+        },
+        "hacking_sequence": {
+            "title": "System Infiltration",
+            "description": "ALEX begins the hacking sequence. 'The security system uses a quantum encryption protocol. I'll need to solve a series of mathematical puzzles to bypass it.'",
+            "choices": [
+                {
+                    "text": "Proceed with the hack.",
+                    "next_scene": "hack_puzzle_2"
+                },
+                {
+                    "text": "Look for an alternative approach.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "weapons_overload": {
+            "title": "Critical Systems",
+            "description": "The pirate ship's weapons begin to overload. ALEX warns: 'Their weapon systems are becoming unstable. This could either disable them completely or cause a catastrophic explosion.'",
+            "choices": [
+                {
+                    "text": "Continue the attack and disable their ship.",
+                    "next_scene": "weapons_success"
+                },
+                {
+                    "text": "Break off the attack and try another approach.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "disable_weapons": {
+            "title": "Weapons Systems",
+            "description": "ALEX targets their weapons systems. 'I've identified their main weapons array. A precise strike could disable their offensive capabilities.'",
+            "choices": [
+                {
+                    "text": "Fire on their weapons systems.",
+                    "next_scene": "weapons_success"
+                },
+                {
+                    "text": "Target their shield generators instead.",
+                    "next_scene": "disable_shields"
+                }
+            ]
+        },
+        "weapons_success": {
+            "title": "Tactical Victory",
+            "description": "The pirate ship's weapons go offline. ALEX confirms: 'Their main weapons array is disabled. They're powering up their engines - likely preparing to retreat.'",
+            "choices": [
+                {
+                    "text": "Let them retreat while we rescue the colonists.",
+                    "next_scene": "titan_approach"
+                },
+                {
+                    "text": "Pursue and disable their engines.",
+                    "next_scene": "pursue_command_ship"
+                }
+            ]
+        },
+        "titan_approach": {
+            "title": "Approaching Titan-7",
+            "description": "As you approach Titan-7, your enhanced sensors paint a grim picture. The colony's surface structures show extensive damage, and there's no response to your hails. The pirate vessel orbits menacingly, its weapons systems active.\n\nALEX reports, 'The colony's reactor is operating at 87% capacity. Radiation levels are rising steadily. If they continue at this rate, we have approximately 2 hours before critical levels are reached.'\n\nCommander Rodriguez points to the tactical display. 'The pirate ship is a modified freighter, but it's been heavily armed. Their weapons are more powerful than our defensive systems can handle in a direct confrontation.'",
+            "choices": [
+                {
+                    "text": "Attempt to sneak past the pirates and land at the colony's emergency port.",
+                    "next_scene": "sneak_landing"
+                },
+                {
+                    "text": "Open a channel to the pirate ship and try to negotiate.",
+                    "next_scene": "pirate_negotiation"
+                },
+                {
+                    "text": "Power up weapons and prepare for combat.",
+                    "next_scene": "combat_approach"
+                },
+                {
+                    "text": "Deploy a rescue shuttle to the colony's secondary landing pad.",
+                    "next_scene": "rescue_shuttle",
+                    "conditions": [
+                        {"type": "has_flag", "flag": "has_scan_data"}
+                    ]
+                }
+            ]
+        },
+        "sneak_landing": {
+            "title": "Covert Approach",
+            "description": "Your shuttle approaches the colony using minimal power. ALEX whispers: 'We're avoiding their main sensors, but we'll need to find a way past the automated defense systems.'",
+            "choices": [
+                {
+                    "text": "Try to hack the defense systems.",
+                    "next_scene": "shuttle_hack"
+                },
+                {
+                    "text": "Look for an alternative entrance.",
+                    "next_scene": "alternative_entrance"
+                }
+            ]
+        },
+        "rescue_mission": {
+            "title": "Infiltration",
+            "description": "The security team enters the colony through the maintenance shaft. ALEX monitors their progress: 'The children are being held near the reactor control room. There are four armed guards.'",
+            "choices": [
+                {
+                    "text": "Have the team rescue the children immediately.",
+                    "next_scene": "children_rescue"
+                },
+                {
+                    "text": "Gather more intelligence about the situation.",
+                    "next_scene": "pirate_observation"
+                }
+            ]
+        },
+        "pirate_negotiation": {
+            "title": "Diplomatic Solution",
+            "description": "You open a channel to the pirate leader. A gruff voice responds: 'So, the Federation finally sends someone. We're not leaving without the quantum crystals. But perhaps we can reach an arrangement that benefits us both.'\n\nCommander Rodriguez whispers: 'They're stalling. The reactor's temperature is still rising.'\n\nLieutenant James adds: 'I'm detecting multiple ships approaching from the outer system. They might be calling for reinforcements.'\n\nThe pirate leader continues: 'We have the children, and we have control of the reactor. What do you have to offer?'",
+            "choices": [
+                {
+                    "text": "Offer the medical supplies in exchange for the children",
+                    "next_scene": "medical_bargain"
+                },
+                {
+                    "text": "Propose a joint operation to safely extract the crystals",
+                    "next_scene": "ending_pirate_victory",
+                    "actions": [
+                        {"type": "set_flag", "flag": "trusted_pirates"}
+                    ]
+                },
+                {
+                    "text": "This is a stalling tactic. Attack now",
+                    "next_scene": "combat_approach"
+                },
+                {
+                    "text": "Request more time to consider their demands",
+                    "next_scene": "ending_time_wasted",
+                    "actions": [
+                        {"type": "set_flag", "flag": "time_wasted"}
+                    ]
+                }
+            ]
+        },
+        "earth_route": {
+            "title": "Return to Earth",
+            "description": "You set course for Earth, carrying vital medical supplies. However, ALEX interrupts: 'Captain, I'm detecting an encrypted distress signal from Titan-7. It appears to be using an old Federation emergency frequency.'",
+            "choices": [
+                {
+                    "text": "Investigate the distress signal.",
+                    "next_scene": "decrypt_communications"
+                },
+                {
+                    "text": "Continue to Earth. The medical supplies are critical.",
+                    "next_scene": "ending_duty"
+                }
+            ]
+        },
+        "federation_contact": {
+            "title": "Federation Response",
+            "description": "You establish contact with Federation Command. Admiral Chen appears on screen: 'We've received your report. A task force is en route, but they won't arrive for several hours. The situation at Titan-7 requires immediate action.'",
+            "choices": [
+                {
+                    "text": "Wait for Federation backup.",
+                    "next_scene": "ending_federation"
+                },
+                {
+                    "text": "Proceed to Titan-7 immediately.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "ending_heroic": {
+            "title": "A Hero's Choice",
+            "description": "Your quick thinking saves the children and forces the pirates to flee. The colonists hail you as a hero, and the Federation offers you a position in their anti-piracy division. Your story becomes legend among the stars.",
+            "choices": []
+        },
+        "ending_combat": {
+            "title": "The Cost of Violence",
+            "description": "The direct assault succeeds, but not without casualties. The children are safe, but the colony's reactor is damaged in the fighting. Your heroism is remembered, but so is the price that was paid.",
+            "choices": []
+        },
+        "ending_compromise": {
+            "title": "Shades of Gray",
+            "description": "Your deal with the pirates saves the children and the colony, but the Black Nebula Pirates grow stronger with their new resources. You've made peace, but at the cost of future conflicts.",
+            "choices": []
+        },
+        "ending_betrayal": {
+            "title": "The Double Cross",
+            "description": "Your distress signal brings Federation ships, but the pirates detect it first. In the ensuing chaos, you manage to save the children, but the pirate captain escapes, vowing revenge. You've won the battle, but the war continues.",
+            "choices": []
+        },
+        "ending_duty": {
+            "title": "The Greater Good",
+            "description": "Your medical supplies save thousands on Earth, but the memory of Titan-7 haunts you. Sometimes, doing the right thing means making impossible choices. You continue your service, hoping to make a difference where you can.",
+            "choices": []
+        },
+        "ending_federation": {
+            "title": "A New Path",
+            "description": "Joining the Federation's task force, you become part of a larger effort to protect the colonies. Your experience at Titan-7 shapes your approach to piracy prevention, making you a more effective and compassionate officer.",
+            "choices": []
+        },
+        "combat_approach": {
+            "title": "Direct Assault",
+            "description": "You order your ship into attack position. ALEX analyzes their defenses: 'Their shields are strongest at the bow. We might have better luck targeting their flanks.'",
+            "choices": [
+                {
+                    "text": "Launch a full assault on their ship.",
+                    "next_scene": "prepare_battle"
+                },
+                {
+                    "text": "Send a rescue shuttle while we keep them busy.",
+                    "next_scene": "rescue_shuttle"
+                }
+            ]
+        },
+        "ending_combat_victory": {
+            "title": "Tactical Victory",
+            "description": "Your precise shot disables the pirate ship's engines, forcing them to surrender. The colonists are freed, and the Federation arrives to take the pirates into custody. Your tactical brilliance is noted in the official records, and you're offered a position in the Federation's tactical division.",
+            "choices": []
+        },
+        "ending_combat_draw": {
+            "title": "Stalemate",
+            "description": "The battle becomes a tense standoff. Your attack on their weapons systems forces the pirates to retreat, but not before they manage to damage your ship's life support. The colony is saved, but your ship requires extensive repairs. The Federation commends your bravery but suggests more diplomatic approaches in the future.",
+            "choices": []
+        },
+        "medical_bargain": {
+            "title": "Negotiation",
+            "description": "You offer the medical supplies as a bargaining chip. The pirate leader considers: 'Those supplies would fetch a good price... and they're less risky than quantum crystals. But how do we know you'll keep your word?'",
+            "choices": [
+                {
+                    "text": "Arrange a simultaneous exchange.",
+                    "next_scene": "ending_medical_trade"
+                },
+                {
+                    "text": "Use the negotiation as a distraction.",
+                    "next_scene": "ending_medical_ambush"
+                }
+            ]
+        },
+        "ending_medical_trade": {
+            "title": "A Necessary Compromise",
+            "description": "The exchange goes smoothly. The children are returned safely, and the pirates leave with the medical supplies. While you've lost valuable cargo, you've saved innocent lives. The Federation, while disappointed with the loss of supplies, acknowledges the difficult choice you had to make.",
+            "choices": []
+        },
+        "ending_medical_ambush": {
+            "title": "The Trap",
+            "description": "Your plan works perfectly. As the pirates are distracted by the medical supplies, the colonists launch a surprise attack. The pirates are captured, and the medical supplies are recovered. Your quick thinking and tactical planning earn you a commendation from the Federation.",
+            "choices": []
+        },
+        "rescue_shuttle": {
+            "title": "Covert Operation",
+            "description": "The rescue shuttle launches while your ship engages the pirates. ALEX coordinates the operation: 'The shuttle team is approaching the colony. We need to keep the pirates distracted.'",
+            "choices": [
+                {
+                    "text": "Focus on protecting the shuttle.",
+                    "next_scene": "countermeasures"
+                },
+                {
+                    "text": "Attack aggressively to draw their attention.",
+                    "next_scene": "distraction_attack"
+                }
+            ]
+        },
+        "shuttle_hack": {
+            "title": "Security Breach",
+            "description": "The hacking attempt fails, triggering the security system's alarms. ALEX reports, 'The pirates have detected our intrusion. They're locking down the colony's systems.'",
+            "choices": [
+                {
+                    "text": "Return to the main ship and try a different approach.",
+                    "next_scene": "titan_approach"
+                },
+                {
+                    "text": "Try the hacking sequence again with a different approach.",
+                    "next_scene": "shuttle_hack"
+                }
+            ]
+        },
+        "hack_puzzle_2": {
+            "title": "Security Challenge",
+            "description": "ALEX presents the second security layer: 'This is a quantum encryption protocol. We need to match the phase of our signal with their security nodes. One wrong move could trigger the alarms.'",
+            "choices": [
+                {
+                    "text": "Synchronize with Node Alpha",
+                    "next_scene": "hack_puzzle_3"
+                },
+                {
+                    "text": "Synchronize with Node Beta",
+                    "next_scene": "hack_failed"
+                },
+                {
+                    "text": "Synchronize with Node Gamma",
+                    "next_scene": "hack_failed"
+                }
+            ]
+        },
+        "hack_puzzle_3": {
+            "title": "Final Security Layer",
+            "description": "ALEX displays the final security challenge: 'We're at the core system. The security uses a rotating encryption key based on reactor output levels. We need to predict the next key in the sequence.'",
+            "choices": [
+                {
+                    "text": "Calculate based on current reactor output",
+                    "next_scene": "hack_success"
+                },
+                {
+                    "text": "Use historical reactor data",
+                    "next_scene": "hack_failed"
+                },
+                {
+                    "text": "Try brute force approach",
+                    "next_scene": "hack_failed"
+                }
+            ]
+        },
+        "hack_success": {
+            "title": "System Access",
+            "description": "The security systems fall away as ALEX gains control. 'We have access to all colony systems. I can see the reactor controls, security cameras, and life support systems. What should we focus on first?'",
+            "choices": [
+                {
+                    "text": "Access security cameras to locate the children.",
+                    "next_scene": "children_rescue"
+                },
+                {
+                    "text": "Monitor the pirates' activities.",
+                    "next_scene": "pirate_observation"
+                }
+            ]
+        },
+        "children_rescue": {
+            "title": "Rescue Operation",
+            "description": "The security team moves in to rescue the children. ALEX monitors the situation: 'The pirates are distracted by the reactor's instability. This is our best chance.'",
+            "choices": [
+                {
+                    "text": "Begin immediate evacuation.",
+                    "next_scene": "shuttle_return"
+                },
+                {
+                    "text": "Secure the reactor first.",
+                    "next_scene": "secure_reactor"
+                }
+            ]
+        },
+        "shuttle_return": {
+            "title": "Extraction Complete",
+            "description": "The shuttle returns with the rescued children. ALEX reports: 'All children are safe, but the pirates are attempting to overload the reactor. We need to act quickly.'",
+            "choices": [
+                {
+                    "text": "Focus on securing the reactor.",
+                    "next_scene": "secure_reactor"
+                },
+                {
+                    "text": "Begin colony evacuation.",
+                    "next_scene": "colony_evacuation"
+                }
+            ]
+        },
+        "countermeasures": {
+            "title": "Defensive Systems",
+            "description": "ALEX presents defensive options: 'We have chaff launchers, ECM systems, and defensive drones available. How should we protect the shuttle?'",
+            "choices": [
+                {
+                    "text": "Deploy all countermeasures.",
+                    "next_scene": "full_defense"
+                },
+                {
+                    "text": "Use chaff and ECM only.",
+                    "next_scene": "partial_defense"
+                },
+                {
+                    "text": "Rely on ECM jamming.",
+                    "next_scene": "ecm_only"
+                }
+            ]
+        },
+        "full_defense": {
+            "title": "Maximum Protection",
+            "description": "All defensive systems engage. The chaff clouds blind their targeting, ECM disrupts their communications, and drones intercept incoming fire. ALEX reports: 'The shuttle has a clear path, but our resources are stretched thin.'",
+            "choices": [
+                {
+                    "text": "Maintain defensive screen until the shuttle is safe.",
+                    "next_scene": "repair_sequence"
+                },
+                {
+                    "text": "Switch to offensive operations.",
+                    "next_scene": "prepare_battle"
+                }
+            ]
+        },
+        "repair_sequence": {
+            "title": "System Recovery",
+            "description": "The engineering team reports multiple systems need attention. ALEX prioritizes: 'Shields are at 40%, weapons at 55%, and engines at 60%. We need to focus our repairs.'",
+            "choices": [
+                {
+                    "text": "Repair shield generators.",
+                    "next_scene": "shield_repair"
+                },
+                {
+                    "text": "Fix weapons systems.",
+                    "next_scene": "weapon_repair"
+                },
+                {
+                    "text": "Focus on engine repairs.",
+                    "next_scene": "engine_repair"
+                }
+            ]
+        },
+        "shield_repair": {
+            "title": "Defense Systems",
+            "description": "The engineering team works on the shield generators. ALEX monitors the progress: 'Shields are at 65% capacity, but the reactor's instability is affecting power distribution.'",
+            "choices": [
+                {
+                    "text": "Continue shield repairs.",
+                    "next_scene": "reactor_crisis"
+                },
+                {
+                    "text": "Switch to reactor stabilization.",
+                    "next_scene": "reactor_stabilization"
+                }
+            ]
+        },
+        "reactor_crisis": {
+            "title": "Critical Situation",
+            "description": "Warning alarms blare as the reactor's temperature continues to rise. ALEX's voice is urgent: 'The reactor is approaching critical levels. The pirates' modifications are causing severe instability.'\n\nChief Engineer Martinez rushes to the controls: 'Captain, we've lost precious time. The reactor's temperature is higher than it should be, and the containment field is weakening faster than expected.'\n\nCommander Rodriguez looks grim: 'If we had acted sooner, we might have had more options. Now we need to make some hard choices.'",
+            "choices": [
+                {
+                    "text": "Begin reactor stabilization procedures.",
+                    "next_scene": "reactor_stabilization",
+                    "conditions": [
+                        {"type": "not_has_flag", "flag": "time_wasted"}
+                    ]
+                },
+                {
+                    "text": "Begin reactor stabilization procedures.",
+                    "next_scene": "stabilization_failure",
+                    "conditions": [
+                        {"type": "has_flag", "flag": "time_wasted"}
+                    ]
+                },
+                {
+                    "text": "Investigate the reactor's condition.",
+                    "next_scene": "reactor_investigation"
+                }
+            ]
+        },
+        "reactor_stabilization": {
+            "title": "Last Chance",
+            "description": "The reactor control room is a maze of flashing lights and warning indicators. Chief Engineer Martinez examines the cooling system: 'We have three types of coolant available:\n- Type A: 500L of standard coolant, reduces temperature by 100K\n- Type B: 300L of concentrated coolant, reduces temperature by 200K\n- Type C: 200L of emergency coolant, reduces temperature by 300K\n\nThe reactor is at 800K and needs to reach 300K. We need to be careful - too much cooling too quickly could cause thermal shock and make things worse. The cooling system can handle one batch at a time.'\n\nALEX adds: 'Based on the reactor's current state, we should avoid using more than 400L of coolant at once to prevent thermal shock.'",
+            "choices": [
+                {
+                    "text": "Use 300L of Type B coolant",
+                    "next_scene": "stabilization_success"
+                },
+                {
+                    "text": "Use 200L of Type C coolant",
+                    "next_scene": "stabilization_failure"
+                },
+                {
+                    "text": "Use 400L of Type A coolant",
+                    "next_scene": "stabilization_failure"
+                }
+            ]
+        },
+        "stabilization_success": {
+            "title": "Crisis Averted",
+            "description": "The reactor stabilization succeeds. ALEX confirms: 'Reactor temperature is dropping. We've prevented the meltdown, but the pirates' modifications have permanently damaged some systems.'",
+            "choices": [
+                {
+                    "text": "Begin repairs and secure the colony.",
+                    "next_scene": "ending_federation_hero"
+                },
+                {
+                    "text": "Pursue the escaping pirates.",
+                    "next_scene": "pursue_command_ship"
+                }
+            ]
+        },
+        "colony_evacuation": {
+            "title": "Emergency Procedures",
+            "description": "You order the colony's evacuation. ALEX coordinates with the emergency systems: 'We have multiple ships available, but time is limited. The reactor will reach critical levels in 45 minutes.'",
+            "choices": [
+                {
+                    "text": "Evacuate by priority - children and essential personnel first.",
+                    "next_scene": "evacuation_priority"
+                },
+                {
+                    "text": "Evacuate by sections to maintain order.",
+                    "next_scene": "evacuation_sections"
+                }
+            ]
+        },
+        "evacuation_priority": {
+            "title": "Critical Personnel",
+            "description": "The evacuation begins with children and key personnel. ALEX monitors the progress: 'First group is away safely. We can save about 60% of the colony's population before the reactor becomes too unstable.'",
+            "choices": [
+                {
+                    "text": "Continue the priority evacuation.",
+                    "next_scene": "ending_evacuation_partial"
+                },
+                {
+                    "text": "Try one last time to stabilize the reactor.",
+                    "next_scene": "reactor_stabilization"
+                }
+            ]
+        },
+        "ending_federation_hero": {
+            "title": "A New Beginning",
+            "description": "Your heroic actions at Titan-7 have made you a legend in the Federation. As a member of the anti-piracy task force, you lead successful operations against the Black Nebula Pirates. Your experience with the colony's crisis makes you particularly effective at protecting other vulnerable settlements.\n\nThe children you rescued grow up to become leaders in their own right, inspired by your courage and determination. Your story becomes a beacon of hope in the fight against space piracy.",
+            "choices": []
+        },
+        "ending_duty_honor": {
+            "title": "Honor and Duty",
+            "description": "You complete your original mission, delivering the medical supplies to Earth. Your actions at Titan-7, while not widely known, have saved countless lives. The colony's children, now safe, send you regular updates about their progress.\n\nYou continue your service as a merchant captain, but now with a deeper understanding of the complex choices that come with command. Your experience at Titan-7 shapes your decisions, making you a wiser and more compassionate leader.",
+            "choices": []
+        },
+        "ending_evacuation_partial": {
+            "title": "The Cost of Survival",
+            "description": "The evacuation saves 750 lives, but the reactor meltdown claims the rest. The Federation arrives too late to help, but in time to assist with the aftermath. Your decision to prioritize evacuation over stabilization haunts you, but you know it was the only way to save as many as possible.\n\nThe survivors rebuild their lives, and you become a vocal advocate for better colony safety protocols. Your experience leads to new regulations that prevent similar tragedies in the future.",
+            "choices": []
+        },
+        "alex_decryption": {
+            "title": "AI Analysis",
+            "description": "ALEX takes over the decryption process. 'I've identified the encryption pattern. It's using a modified version of the old Federation military code, but with quantum encryption layers.'\n\nThe AI's processing power quickly breaks through the first layer, revealing more of the message:\n'...quantum crystals...reactor overload...children as leverage...'",
+            "choices": [
+                {
+                    "text": "Let ALEX continue the decryption.",
+                    "next_scene": "decrypt_communications_2"
+                },
+                {
+                    "text": "We have enough information. Proceed to Titan-7.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "has_comm_data"}
+                    ]
+                }
+            ]
+        },
+        "colony_scan": {
+            "title": "Colony Analysis",
+            "description": "The probe scans the colony's surface. ALEX processes the data: 'The colony's defense systems are completely offline. The main reactor is operating at 92% capacity, and radiation levels are increasing. I'm detecting multiple life signs in the reactor complex.'\n\nCommander Rodriguez points to the display. 'Those must be the children. The pirates are using them as human shields.'",
+            "choices": [
+                {
+                    "text": "Return to the main ship with this information.",
+                    "next_scene": "titan_approach",
+                    "actions": [
+                        {"type": "set_flag", "flag": "has_colony_data"}
+                    ]
+                },
+                {
+                    "text": "Have the probe search for alternative entrances to the reactor complex.",
+                    "next_scene": "alternative_entrance"
+                }
+            ]
+        },
+        "disable_shields": {
+            "title": "Vulnerable Target",
+            "description": "ALEX initiates the shield generator overload. 'The shields are beginning to fail, but their backup systems are activating. We need to choose our next target quickly.'",
+            "choices": [
+                {
+                    "text": "Target the backup shield generators.",
+                    "next_scene": "weapons_success"
+                },
+                {
+                    "text": "Switch to targeting their weapons while their shields are down.",
+                    "next_scene": "disable_weapons"
+                }
+            ]
+        },
+        "disable_engines": {
+            "title": "Mobility Control",
+            "description": "ALEX targets the engine core. 'Their engines are beginning to fail, but they're initiating emergency protocols. We need to decide our next move.'",
+            "choices": [
+                {
+                    "text": "Continue targeting the engines to prevent their escape.",
+                    "next_scene": "weapons_success"
+                },
+                {
+                    "text": "Switch to targeting their weapons while they're immobilized.",
+                    "next_scene": "disable_weapons"
+                }
+            ]
+        },
+        "disable_life_support": {
+            "title": "Critical Systems",
+            "description": "ALEX warns, 'Captain, targeting life support is a violation of the Federation's rules of engagement. While it would force them to abandon ship, it could result in unnecessary casualties.'",
+            "choices": [
+                {
+                    "text": "Abort the life support attack and target weapons instead.",
+                    "next_scene": "disable_weapons"
+                },
+                {
+                    "text": "Proceed with the life support attack. They brought this on themselves.",
+                    "next_scene": "weapons_success"
+                }
+            ]
+        },
+        "pursue_command_ship": {
+            "title": "Chase Sequence",
+            "description": "You order your ship to pursue the command vessel. ALEX calculates the intercept course: 'We can catch them, but they're likely to call for reinforcements. This could turn into a larger battle.'",
+            "choices": [
+                {
+                    "text": "Continue the pursuit. We can't let them escape.",
+                    "next_scene": "ending_combat_victory"
+                },
+                {
+                    "text": "Break off pursuit and return to Titan-7.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "alternative_entrance": {
+            "title": "Secret Passage",
+            "description": "The probe discovers a maintenance shaft leading to the reactor complex. ALEX analyzes the route: 'This shaft is narrow but passable. It leads directly to the reactor's control room, bypassing the main security checkpoints.'",
+            "choices": [
+                {
+                    "text": "Send the security team through the maintenance shaft.",
+                    "next_scene": "children_rescue"
+                },
+                {
+                    "text": "Return to the main ship and try a different approach.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "hack_failed": {
+            "title": "Security Alert",
+            "description": "The hacking attempt fails, triggering alarms. ALEX warns: 'The security system has detected our intrusion. The pirates are now on high alert.'",
+            "choices": [
+                {
+                    "text": "Return to the ship and try a different approach.",
+                    "next_scene": "titan_approach"
+                },
+                {
+                    "text": "Try hacking again with a different method.",
+                    "next_scene": "shuttle_hack"
+                }
+            ]
+        },
+        "pirate_observation": {
+            "title": "Gathering Intelligence",
+            "description": "You order the security team to observe the pirates. Through their surveillance, you learn that the pirates are planning to overload the reactor to extract quantum crystals, a rare mineral that forms during controlled meltdowns.",
+            "choices": [
+                {
+                    "text": "Move in to rescue the children now that we know their plan.",
+                    "next_scene": "children_rescue"
+                },
+                {
+                    "text": "Continue observing to learn more about their operation.",
+                    "next_scene": "pirate_observation_2"
+                }
+            ]
+        },
+        "secure_reactor": {
+            "title": "Critical Control",
+            "description": "The security team moves to secure the reactor complex. ALEX monitors the situation: 'The pirates are attempting to overload the reactor. We need to act quickly to prevent a meltdown.'",
+            "choices": [
+                {
+                    "text": "Have the security team focus on securing the reactor controls.",
+                    "next_scene": "reactor_crisis"
+                },
+                {
+                    "text": "Order the shuttle to return with the children while we handle the reactor.",
+                    "next_scene": "shuttle_return"
+                }
+            ]
+        },
+        "distraction_attack": {
+            "title": "Diversion Tactics",
+            "description": "Your ship moves to engage the pirate vessel, drawing their attention away from the shuttle. ALEX coordinates the attack: 'We're taking heavy fire, but the shuttle has a clear path to safety.'",
+            "choices": [
+                {
+                    "text": "Continue the distraction until the shuttle is safe.",
+                    "next_scene": "full_defense"
+                },
+                {
+                    "text": "Break off and return to the main ship.",
+                    "next_scene": "titan_approach"
+                }
+            ]
+        },
+        "partial_defense": {
+            "title": "Balanced Protection",
+            "description": "The chaff and ECM systems are deployed. The pirate ship's targeting is disrupted, but they're still able to track the shuttle. ALEX reports, 'We have a 75% chance of success. The shuttle is making good progress.'",
+            "choices": [
+                {
+                    "text": "Deploy the remaining drones as a last resort.",
+                    "next_scene": "full_defense"
+                },
+                {
+                    "text": "Continue with current countermeasures.",
+                    "next_scene": "repair_sequence"
+                }
+            ]
+        },
+        "ecm_only": {
+            "title": "Electronic Warfare",
+            "description": "The ECM system successfully jams the pirate ship's weapons, but their targeting systems remain active. ALEX warns, 'They're attempting to bypass our jamming. We need to act quickly.'",
+            "choices": [
+                {
+                    "text": "Deploy additional countermeasures.",
+                    "next_scene": "full_defense"
+                },
+                {
+                    "text": "Continue with ECM and hope for the best.",
+                    "next_scene": "repair_sequence"
+                }
+            ]
+        },
+        "weapon_repair": {
+            "title": "Offensive Capability",
+            "description": "The engineering team focuses on the weapons systems. ALEX monitors the progress: 'Weapons are at 60% capacity, but the reactor's condition is deteriorating. We need to make a decision.'",
+            "choices": [
+                {
+                    "text": "Continue weapon repairs.",
+                    "next_scene": "reactor_crisis"
+                },
+                {
+                    "text": "Switch to reactor stabilization.",
+                    "next_scene": "reactor_stabilization"
+                }
+            ]
+        },
+        "engine_repair": {
+            "title": "Propulsion Systems",
+            "description": "The engineering team works on the engine core. ALEX reports, 'Engines are at 70% capacity, but the reactor's instability is affecting our power distribution.'",
+            "choices": [
+                {
+                    "text": "Continue engine repairs.",
+                    "next_scene": "reactor_crisis"
+                },
+                {
+                    "text": "Switch to reactor stabilization.",
+                    "next_scene": "reactor_stabilization"
+                }
+            ]
+        },
+        "reactor_investigation": {
+            "title": "Technical Analysis",
+            "description": "The engineering team investigates the reactor fluctuations. ALEX analyzes the data: 'The pirates have modified the reactor's control systems. They're attempting to create a controlled meltdown to extract quantum crystals.'",
+            "choices": [
+                {
+                    "text": "Attempt to stabilize the reactor.",
+                    "next_scene": "reactor_stabilization"
+                },
+                {
+                    "text": "Begin evacuation procedures.",
+                    "next_scene": "colony_evacuation"
+                }
+            ]
+        },
+        "stabilization_failure": {
+            "title": "Critical Failure",
+            "description": "The reactor stabilization attempt fails. ALEX's voice is urgent: 'The reactor's temperature is still rising. We need to make a critical decision.'\n\nChief Engineer Martinez looks grim: 'The thermal shock has damaged the cooling systems. We can't try another stabilization attempt.'",
+            "choices": [
+                {
+                    "text": "Begin immediate evacuation.",
+                    "next_scene": "colony_evacuation"
+                },
+                {
+                    "text": "Try to save the reactor one last time.",
+                    "next_scene": "ending_reactor_meltdown"
+                }
+            ]
+        },
+        "ending_reactor_meltdown": {
+            "title": "The Price of Failure",
+            "description": "Your final attempt to save the reactor fails. The containment field collapses, and the reactor goes critical. The colony is lost, along with most of its inhabitants. The Federation's investigation reveals that the pirates' modifications made the reactor unstable beyond recovery.\n\nYou spend the rest of your career working to prevent similar tragedies, but the memory of Titan-7 haunts you. The few survivors who escaped blame you for not acting sooner, and their accusations follow you for years to come.",
+            "choices": []
+        },
+        "evacuation_sections": {
+            "title": "Organized Retreat",
+            "description": "You order the evacuation to proceed by sections, starting with the areas closest to the reactor. ALEX coordinates the effort: 'We're evacuating 150 people per trip. At this rate, we can save 750 people before the reactor reaches critical levels.'",
+            "choices": [
+                {
+                    "text": "Continue with the section-by-section evacuation.",
+                    "next_scene": "ending_evacuation_partial"
+                },
+                {
+                    "text": "Switch to prioritizing children and essential personnel.",
+                    "next_scene": "evacuation_priority"
+                }
+            ]
+        },
+        "pirate_observation_2": {
+            "title": "Critical Intelligence",
+            "description": "Further observation reveals more details. The pirates are using advanced Federation technology, suggesting they have inside help. You also notice they're following strict protocols to prevent reactor damage during crystal extraction.",
+            "choices": [
+                {
+                    "text": "Use this knowledge to plan a rescue.",
+                    "next_scene": "children_rescue"
+                },
+                {
+                    "text": "Report the Federation connection.",
+                    "next_scene": "federation_contact"
+                }
+            ]
+        },
+        "prepare_battle": {
+            "title": "Combat Preparations",
+            "description": "Your crew readies for combat. ALEX analyzes the situation: 'The pirate vessel is heavily armed but their shields are weaker on the port side. We should focus our attack there.'",
+            "choices": [
+                {
+                    "text": "Target their weapons systems.",
+                    "next_scene": "disable_weapons"
+                },
+                {
+                    "text": "Aim for their shield generators.",
+                    "next_scene": "disable_shields"
+                }
+            ]
+        },
+        "detailed_scan": {
+            "title": "Thorough Investigation",
+            "description": "You order a comprehensive scan of the entire colony. ALEX begins the process: 'This will take approximately 30 minutes to complete. We'll map every structure, energy signature, and life form in the colony.'\n\nAs the minutes pass, the reactor's temperature continues to rise. Commander Rodriguez looks increasingly concerned: 'Captain, while this information could be valuable, we're losing precious time.'\n\nChief Engineer Martinez adds: 'The reactor's temperature is increasing faster than expected. The pirates must be accelerating their crystal extraction process.'",
+            "choices": [
+                {
+                    "text": "Continue the detailed scan - we need complete information",
+                    "next_scene": "scan_results",
+                    "actions": [
+                        {"type": "set_flag", "flag": "time_wasted"}
+                    ]
+                },
+                {
+                    "text": "Abort scan and proceed with what we know",
+                    "next_scene": "titan_approach"
+                },
+                {
+                    "text": "Focus the scan on the reactor complex only",
+                    "next_scene": "probe_investigation"
+                }
+            ]
+        },
+        "scan_results": {
+            "title": "Complete Analysis",
+            "description": "The detailed scan reveals extensive information about the colony's layout and the pirates' operations. ALEX processes the data: 'I've identified all pirate positions, their equipment, and even their communication patterns. However, the reactor's temperature has increased significantly during our scan.'\n\nCommander Rodriguez points to the tactical display: 'The pirates have reinforced their positions. They're expecting us now.'",
+            "choices": [
+                {
+                    "text": "Use this information to plan a precise assault",
+                    "next_scene": "combat_approach"
+                },
+                {
+                    "text": "Try to negotiate with our new knowledge",
+                    "next_scene": "pirate_negotiation"
+                }
+            ]
+        },
+        "federation_consultation": {
+            "title": "Command Decision",
+            "description": "You decide to consult with Federation Command about the situation. Admiral Chen appears on screen: 'This is a complex situation. Let me confer with the other admirals.'\n\nThe conference takes nearly an hour as various Federation officials debate the best course of action. Meanwhile, ALEX reports: 'The reactor's temperature has increased by another 50K during this consultation.'\n\nCommander Rodriguez steps forward: 'Captain, we need to make a decision. The Federation's deliberation could take hours, and we don't have that kind of time.'",
+            "choices": [
+                {
+                    "text": "Wait for the Federation's decision - we need their authority",
+                    "next_scene": "ending_time_wasted",
+                    "actions": [
+                        {"type": "set_flag", "flag": "time_wasted"}
+                    ]
+                },
+                {
+                    "text": "We can't wait any longer. Proceed with our plan",
+                    "next_scene": "titan_approach"
+                },
+                {
+                    "text": "Request immediate tactical support while we wait",
+                    "next_scene": "federation_contact"
+                }
+            ]
+        },
+        "ending_time_wasted": {
+            "title": "Too Late",
+            "description": "Your careful investigation and planning took too long. By the time you reached the colony, the reactor was beyond saving. The pirates escaped with their quantum crystals, and the colony was lost.\n\nThe Federation's investigation concludes that your excessive caution cost lives. You're reassigned to a desk job, where you spend your days reviewing reports and wondering what might have been if you had acted more decisively.",
+            "choices": []
+        },
+        "ending_pirate_victory": {
+            "title": "The Pirates' Triumph",
+            "description": "The pirates successfully extract their quantum crystals and escape. The colony is left in ruins, its reactor damaged beyond repair. The children are traumatized by their experience, and the colony's future is uncertain.\n\nYou're left to pick up the pieces, knowing that your indecision and failed attempts at negotiation allowed the pirates to achieve their goals. The Federation's trust in you is shaken, and you spend years trying to rebuild your reputation.",
+            "choices": []
+        }
+    }
+} 
